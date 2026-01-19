@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	var a[5] int
+	var a [5]int
 	fmt.Println("emp:", a)
 
 	a[4] = 100
@@ -12,28 +12,35 @@ func main() {
 
 	fmt.Println("len:", len(a))
 
-	b := [5]int{1,2,3,4,5}
+	b := [5]int{1, 2, 3, 4, 5}
 	fmt.Println("dcl:", b)
+
+	b2 := [5]int{1, 2, 3, 4, 5}
+	fmt.Println("b == b2:", b == b2)
+
+	test := [2]int{1, 2}
+	test2 := test
+	test[0] = 2
+	fmt.Println(test, test2)
 
 	f := [...]int{100, 5: 400, 500}
 	fmt.Println("idx:", f)
-
 
 	b = [5]int{100, 3: 400, 500}
 	fmt.Println("idx:", b)
 
 	var twoD [2][3]int
-	for i := range len(twoD){
-		for j := range len(twoD[0]){
-			twoD[i][j] = i+j
+	for i := range len(twoD) {
+		for j := range len(twoD[0]) {
+			twoD[i][j] = i + j
 		}
 	}
 
 	fmt.Println("2d:", twoD)
 
 	twoD = [2][3]int{
-        {1, 2, 3},
-        {1, 2, 3},
-    }
-    fmt.Println("2d: ", twoD)
+		{1, 2, 3},
+		{1, 2, 3},
+	}
+	fmt.Println("2d: ", twoD)
 }
